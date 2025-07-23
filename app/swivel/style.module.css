@@ -1,0 +1,93 @@
+.body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    transition: all;
+    transition-duration: 300;
+    background: #fffffff2;
+    border-bottom: 1px;
+    border-color: oklch(96.7% .003 264.542);
+    backdrop-filter: blur(8px);
+}
+
+.section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.videoContainer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.headerContainer {
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: 16px;
+}
+
+@media screen and (min-width: 1024px) {
+    .headerContainer {
+        padding-inline: 32px;
+    }
+}
+
+@media screen and (min-width: 640px) {
+    .headerContainer {
+        padding-inline: 24px;
+    }
+}
+
+.headerContents {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+}
+
+.headerLeftButton {
+    display: flex;
+    align-items: center;
+}
+
+.headerLeftButton:hover {
+    transition: transform 100ms ease;
+    transform: scale(1.02);
+}
+
+.logoImg {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    margin-right: 16px;
+    transition-duration: 300;
+}
+
+.logoImg:hover {
+    transition: transform 100ms ease;
+    transform: rotate(5deg);
+}
+
+.logoText {
+    font-size: 18px;
+    font-weight: bold;
+    color: oklch(21% .034 264.665);
+    transition: color;
+    transition-duration: 200;
+}
+
+.logoText:hover {
+    color: oklch(54.6% .245 262.881);
+}
