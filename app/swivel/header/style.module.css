@@ -83,17 +83,17 @@
     align-items: center;
     padding-block: 10px;
     border-radius: 16px;
-    background-color: color-mix(in oklab,var(--color-gray-50)80%, transparent);
+    background-color: color-mix(in oklab, var(--color-gray-50)80%, transparent);
     transition: all;
     transition-duration: .2s;
-    border: solid 1px color-mix(in oklab,var(--color-gray-200) 50%, transparent);
+    border: solid 1px color-mix(in oklab, var(--color-gray-200)50%, transparent);
     backdrop-filter: blur(8px);
     cursor: pointer;
 }
 
 .rightButton:hover {
     transform: translateY(-1px) scale(1.02);
-    background-color: color-mix(in oklab,var(--color-gray-100)80%,transparent);
+    background-color: color-mix(in oklab, var(--color-gray-100)80%, transparent);
 }
 
 .group:hover > .buttonText {
