@@ -1,36 +1,39 @@
-import style from './style.module.css'
+'use client';
 
+import style from './style.module.css'
+import Header from './header'
+import { useState } from 'react';
 
 export default function Swivel() {
-  return (
-    <div className={style.body}>
-        <header className={style.header}>
-            <div className={style.headerContainer}>
-                <div className={style.headerContents}>
-                    <button className={style.headerLeftButton}>
-                        <img 
-                            src="logo.webp" 
-                            alt="Logo" 
-                            loading='lazy'
-                            width={32}
-                            height={32}
-                            className={style.logoImg}/>
-                        <span className={style.logoText}>Swivel</span>
+
+    const [showModal, setShowModal] = useState(false);
+    
+    return (
+        <div className={style.body}>
+            <Header onClickLanguageButton={()=>setShowModal(true)} />
+            <div onClick={()=>setShowModal(false)} 
+                className={`${style.blurBackground} ${showModal ? style.show : ''}`}/>
+            <div className={`${style.modal}  ${showModal ? style.show : ''}`}>
+                <div className={style.modalInner}>
+                    <div className={style.topBar}></div>
+                    <h3 className={style.modalText}>언어 선택</h3>
+                    <button className={`${style.modalButton}  ${showModal ? style.show : ''}`}>
+                        <span className={style.icon}>🇺🇸</span>
+                        <span className={style.modalButtonText}>English</span>
                     </button>
                 </div>
             </div>
-        </header>
-        <section className={style.section}>
-            <div className={style.videoContainer}>
-                <video 
-                autoPlay
-                muted
-                loop 
-                playsInline 
-                preload='auto' 
-                className={style.video} src="/landing_video.mp4"/>
-            </div>
-        </section>
-    </div>
-  );
+            <section className={style.section}>
+                <div className={style.videoContainer}>
+                    <video
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        preload='auto'
+                        className={style.video} src="/landing_video.mp4" />
+                </div>
+            </section>
+        </div>
+    );
 }
