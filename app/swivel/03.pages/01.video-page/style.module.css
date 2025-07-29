@@ -203,6 +203,11 @@
     box-shadow: 0 25px 50px -12px #00000040;
 }
 
+.button:hover {
+    transition: transform 0.4s var(--anime-normal);
+    transform: scale(1.05);
+}
+
 .button:disabled {
     opacity: 50%;
     cursor: not-allowed;
