@@ -64,6 +64,11 @@ const Card = () => {
                                             </div>
                                         </div>
                                     </div>
+                                    <p className={style.instruction}>QR 코드로 연락처 저장</p>
+                                    <p className={style.recommend}>QR 코드로 연락처 저장</p>
+                                </div>
+                                <div className={style.cardView}>
+                                    <p className={style.homepageAddress}>www.company.com</p>
                                 </div>
                             </div>
                         </div>
@@ -86,6 +91,17 @@ const CardPage = () => {
                         QR 코드와 연락처 정보가 포함된 디지털 명함을 만들 수 있습니다.</p>
                 </div>
                 <Card />
+                <div className={style.moreInfo}>
+                    <p className={style.tip}>💡 명함을 클릭하면 뒤집어집니다</p>
+                    <div>
+                        <a className={style.scrollButton}>
+                            <svg className={style.scrollButtonSvg} fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                            </svg>
+                            나만의 명함 만들기
+                        </a>
+                    </div>
+                </div>
             </div>
         </section >
     )

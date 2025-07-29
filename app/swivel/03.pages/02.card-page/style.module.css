@@ -1,5 +1,5 @@
 .cardSection {
-    height: 100vh;
+    height: 100%;
     background-image: linear-gradient(to bottom right in oklab, var(--color-gray-50)0%, var(--color-blue-50)100%);
     padding-block: calc(0.25rem * 20);
     overflow: hidden;
@@ -86,6 +86,7 @@
 .cardView {
     position: relative;
     z-index: 10;
+    text-align: center;
 }
 
 .cardImg {
@@ -149,6 +150,10 @@
     color: cacl(--color-blue-200);
 }
 
+.contactText {
+    color: color-mix(in oklab, var(--color-white) 90%, transparent);
+}
+
 .cardSurface:not(.cardBack) {
     display: none;
     transform: rotateY('180deg');
@@ -175,6 +180,7 @@
     position: relative;
     z-index: 10;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100%;
@@ -218,8 +224,65 @@
     background-color: black;
 }
 
-.contactText {
-    color: color-mix(in oklab, var(--color-white) 90%, transparent);
+.instruction {
+    text-align: center;
+    font-size: .875rem;
+    line-height: calc(1.25/.875);
+    color: var(--color-gray-300);
+    margin-bottom: calc(.25rem * 2);
+    opacity: .8;
+}
+
+.recommend {
+    text-align: center;
+    font-size: .75rem;
+    line-height: calc(1/.75);
+    color: var(--color-gray-400);
+    opacity: .6;
+}
+
+.homepageAddress {
+    font-size: .75rem;
+    line-height: calc(1/.75);
+    color: var(--color-gray-400);
+    margin-bottom: calc(.25rem * 2);
+}
+
+.moreInfo {
+    text-align: center;
+    margin-top: calc(.25rem * 12);
+}
+
+.tip {
+    font-size: .875rem;
+    line-height: calc(1.25/.875);
+    color: var(--color-gray-500);
+    margin-bottom: calc(.25rem * 6);
+}
+
+.scrollButton {
+    display: inline-flex;
+    align-items: center;
+    background-image: linear-gradient(to bottom right in oklab, var(--color-blue-600) 0%, var(--color-blue-700) 100%);
+    color: white;
+    font-weight: 900;
+    border-radius: 1rem;
+    transition: all .3s ease;
+    box-shadow: 10px 15px -3px #0000001a, 0 4px 6px -4px #0000001a;
+    padding-inline: calc(.25rem * 8);
+    padding-block: calc(.25rem * 3);
+    cursor: pointer;
+}
+
+.scrollButton:hover {
+    background-image: linear-gradient(to bottom right in oklab, var(--color-blue-700) 0%, var(--color-blue-800) 100%);
+    box-shadow: 0px 20px 25px -25px #0000001a, 0 8px 10px -6px #0000001a;
+}
+
+.scrollButtonSvg {
+    width: calc(.25rem * 5);
+    height: calc(.25rem * 5);
+    margin-right: calc(.25rem * 2);
 }
 
 /* sm */
