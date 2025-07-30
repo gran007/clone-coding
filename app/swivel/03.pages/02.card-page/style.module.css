@@ -297,7 +297,7 @@
 }
 
 /* md */
-@media screen and (min-width: 48px) {
+@media screen and (min-width: 48rem) {
     .title {
         font-size: 2.25rem;
     }
@@ -309,7 +309,7 @@
 }
 
 /* lg */
-@media screen and (min-width: 64px) {
+@media screen and (min-width: 64rem) {
     .cardPage {
         padding-inline: calc(0.25rem * 8);
     }
