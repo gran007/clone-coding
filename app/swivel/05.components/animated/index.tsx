@@ -3,16 +3,17 @@ import { checkIsInViewport } from '@/app/swivel/04.util';
 
 type AnimatedProps = {
     className: string | undefined,
+    debug?: boolean | undefined
 }
 
-function Animated ({ children, className }: PropsWithChildren<AnimatedProps>) {
+function Animated ({ children, className, debug }: PropsWithChildren<AnimatedProps>) {
     const [show, setShow] = useState(false);
     const areaRef = useRef<HTMLDivElement>(null);
 
     const handleScrollAnimation = () => {
         const elementTop = areaRef?.current;
         if(!show) {
-            setShow(checkIsInViewport(elementTop));
+            setShow(checkIsInViewport(elementTop, debug));
         }
     }
 

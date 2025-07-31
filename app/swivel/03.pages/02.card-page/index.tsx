@@ -82,7 +82,6 @@ const Card = () => {
 
 const CardPage = () => {
     return (
-
         <section className={style.cardSection}>
             <div className={style.cardPage}>
                 <Animated className={style.show}>
