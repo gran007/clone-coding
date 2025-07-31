@@ -5,7 +5,7 @@ type CardInfo = {
     title: string,
     desc: string,
     d: string,
-    className: Object,
+    className: string,
 }
 const cardInfo: CardInfo[] = [
     {

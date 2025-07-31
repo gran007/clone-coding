@@ -8,7 +8,7 @@ type SalesRowType = {
     cardTitle: string,
     cardDesc: string,
     orderLeft: boolean,
-    className: Object,
+    className: string,
 }
 
 const SalesRow = (
