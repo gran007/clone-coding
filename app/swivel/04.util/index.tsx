@@ -9,8 +9,9 @@ export const checkIsInViewport = (elem: HTMLDivElement | null) => {
     top: elementTop,
     bottom: elementBottom,
   } = elem.getBoundingClientRect();
-
-  return elementBottom > 0 && elementTop <= window.innerHeight;
+  
+  // return elementBottom > 0 && 
+  return elementTop <= window.innerHeight;
 };
 
 export const useWindowScrollEvent = (listener: EventListener) => {
