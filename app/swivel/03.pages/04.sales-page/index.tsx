@@ -1,4 +1,5 @@
 import style from './style.module.css'
+import { Animated, SVG } from '@/app/swivel/05.components';
 
 type SalesRowType = {
     title: string,
@@ -7,11 +8,11 @@ type SalesRowType = {
     cardTitle: string,
     cardDesc: string,
     orderLeft: boolean,
-    cardStyle: Object,
+    className: Object,
 }
 
 const SalesRow = (
-    { title, desc, d, cardTitle, cardDesc, orderLeft, cardStyle }: SalesRowType
+    { title, desc, d, cardTitle, cardDesc, orderLeft, className }: SalesRowType
 ) => {
     return (
         <div className={style.row}>
@@ -27,12 +28,10 @@ const SalesRow = (
                     </div>
                 </div>
                 <div className={`${orderLeft ? style.gridRight : style.gridLeft}`}>
-                    <div className={`${style.card} ${cardStyle}`}>
+                    <div className={`${style.card} ${className}`}>
                         <div className={style.cardContentSection}>
                             <div className={style.cardContent}>
-                                <svg className={style.svg} fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                                    <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d={d} />
-                                </svg>
+                                <SVG className={style.svg} d={d} />
                                 <p className={style.cardTitle}>{cardTitle}</p>
                                 <p className={style.cardDesc}>{cardDesc}</p>
                             </div>
@@ -56,7 +55,7 @@ const salesRowData: SalesRowType[] = [
         cardTitle: 'AI + OCR',
         cardDesc: '자동 정보 추출',
         orderLeft: true,
-        cardStyle: style.card1,
+        className: style.card1,
     },
     {
         title: '압도적인 시각적 매력: 살아있는 \'카드 플립\' 명함',
@@ -67,7 +66,7 @@ const salesRowData: SalesRowType[] = [
         cardTitle: 'Card Flip',
         cardDesc: '부드러운 애니메이션',
         orderLeft: false,
-        cardStyle: style.card2,
+        className: style.card2,
     },
     {
         title: '스마트한 공유: 언제 어디서든, 누구에게나',
@@ -80,26 +79,28 @@ const salesRowData: SalesRowType[] = [
         cardTitle: 'Smart Share',
         cardDesc: 'QR + URL',
         orderLeft: true,
-        cardStyle: style.card3,
+        className: style.card3,
     },
 ];
 
 const SalesPage = () => {
     return (
-        <div className={style.section}>
-            <div className={style.pageBody}>
-                <div className={style.titleSection}>
-                    <h2 className={style.title}>
-                        Swivel을 통해 경험하는 명함의 새로운 시대
-                    </h2>
+        <Animated className={style.show}>
+            <div className={style.section}>
+                <div className={style.pageBody}>
+                    <div className={style.titleSection}>
+                        <h2 className={style.title}>
+                            Swivel을 통해 경험하는 명함의 새로운 시대
+                        </h2>
+                    </div>
+                    {
+                        salesRowData.map((item, index) => (
+                            <SalesRow key={index} {...item} />
+                        ))
+                    }
                 </div>
-                {
-                    salesRowData.map((item, index) => (
-                        <SalesRow key={index} {...item} />
-                    ))
-                }
             </div>
-        </div>
+        </Animated>
     )
 }
 

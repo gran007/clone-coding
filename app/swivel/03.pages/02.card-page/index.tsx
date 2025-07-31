@@ -1,6 +1,7 @@
 'use client';
 
 import style from './style.module.css';
+import { Animated, SVG } from '@/app/swivel/05.components';
 
 const gridData = [
     0, 1, 0, 0, 1, 0, 1, 0,
@@ -23,10 +24,8 @@ const Card = () => {
                             <div className={style.cardInner}>
                                 <div className={style.cardView}>
                                     <div className={style.cardImg}>
-                                        <svg className={style.imgSvg} fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                                            <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2}
-                                                d={'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4'} />
-                                        </svg>
+                                        <SVG className={style.imgSvg}
+                                            d={'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4'} />
                                     </div>
                                     <h2 className={style.company}>SWIVEL</h2>
                                 </div>
@@ -81,29 +80,31 @@ const Card = () => {
 
 const CardPage = () => {
     return (
-        <section className={style.cardSection}>
-            <div className={style.cardPage}>
-                <div className={style.titleSection}>
-                    <h2 className={style.title}>명함을 클릭해보세요</h2>
-                    <p className={style.desc}>
-                        실제 명함처럼 앞뒤로 뒤집어지는 애니메이션을 체험해보세요.
-                        <br className={style.descBlock} />
-                        QR 코드와 연락처 정보가 포함된 디지털 명함을 만들 수 있습니다.</p>
-                </div>
-                <Card />
-                <div className={style.moreInfo}>
-                    <p className={style.tip}>💡 명함을 클릭하면 뒤집어집니다</p>
-                    <div>
-                        <a className={style.scrollButton}>
-                            <svg className={style.scrollButtonSvg} fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                            </svg>
-                            나만의 명함 만들기
-                        </a>
+        <Animated className={style.show}>
+            <section className={style.cardSection}>
+                <div className={style.cardPage}>
+                    <div className={style.titleSection}>
+                        <h2 className={style.title}>명함을 클릭해보세요</h2>
+                        <p className={style.desc}>
+                            실제 명함처럼 앞뒤로 뒤집어지는 애니메이션을 체험해보세요.
+                            <br className={style.descBlock} />
+                            QR 코드와 연락처 정보가 포함된 디지털 명함을 만들 수 있습니다.</p>
+                    </div>
+                    <Card />
+                    <div className={style.moreInfo}>
+                        <p className={style.tip}>💡 명함을 클릭하면 뒤집어집니다</p>
+                        <div>
+                            <a className={style.scrollButton}>
+                                <svg className={style.scrollButtonSvg} fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                </svg>
+                                나만의 명함 만들기
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section >
+            </section >
+        </Animated>
     )
 }
 
