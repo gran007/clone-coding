@@ -11,15 +11,14 @@ export const checkIsInViewport = (elem: HTMLDivElement | null, debug: boolean | 
     top: elementTop,
     bottom: elementBottom,
   } = elem.getBoundingClientRect();
-  
-  if(debug) {
+
+  if (debug) {
     console.log(elementTop, window.pageYOffset, elementBottom);
   }
 
   return (
-    // window.pageYOffset <= elementBottom && 
-  window.pageYOffset >= elementTop
-);
+    window.pageYOffset <= elementBottom && window.pageYOffset >= elementTop
+  );
 };
 
 export const useWindowScrollEvent = (listener: EventListener) => {

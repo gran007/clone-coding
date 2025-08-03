@@ -1,5 +1,4 @@
 import style from './style.module.css'
-import { Animated } from '@/app/swivel/05.components';
 
 export default function BackdropFilterPage() {
     return (
